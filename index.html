@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Calculator</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .container{
+        background-color: rgba(0, 0, 0, 0.548);
+        border: 10px solid rgb(92, 117, 146);
+
+      }
+      .number-area div:hover{
+        cursor: pointer;
+        background-color: gray;
+      }
+      .result{
+         word-wrap: break-word;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="text-center text-5xl font-bold my-5">Calculator</h1>
+    <div class="container rounded w-80 mx-auto px-1">
+      <div
+        class="
+        flex
+          display-area
+          h-12
+          bg-gray-400
+          my-2
+          items-center
+          rounded
+          flex
+        "
+      >
+        <h1 id="result" class="p-3 text-2xl font-bold"></h1>
+      </div>
+      <div class=" number-area grid grid-cols-4 gap-2">
+        <div
+          class="
+             
+            bg-gray-300
+            border-2
+            rounded
+            px-3
+            py-2
+            text-center
+            font-bold
+            text-3xl
+          "
+          onclick="allClear()"
+        >
+          AC
+        </div>
+        <div
+          class="
+             
+            bg-gray-300
+            border-2
+            rounded
+            px-3
+            py-2
+            text-center
+            font-bold
+            text-3xl
+          "
+          onclick="Clear()"
+        >
+          C
+        </div>
+        <div
+          class="
+             
+            bg-gray-300
+            border-2
+            rounded
+            px-3
+            py-2
+            text-center
+            font-bold
+            text-3xl
+          "
+          onclick="getValue(this)"
+        >
+          %
+        </div>
+        <div
+          class="
+             
+            bg-gray-300
+            border-2
+            rounded
+            px-3
+            py-2
+            text-center
+            font-bold
+            text-3xl
+          "
+          onclick="getValue(this)"
+        >
+          /
+        </div>
+        <div
+          class="
+            bg-gray-300
+            border-2
+            rounded
+            px-3
+            py-2
+            text-center
+            font-bold
+            text-3xl
+          "
+          onclick="getValue(this)"
+        >
+          7
+        </div>
+        <div
+          class="
+             
+            bg-gray-300
+            border-2
+            rounded
+            px-3
+            py-2
+            text-center
+            font-bold
+            text-3xl
+          "
+          onclick="getValue(this)"
+        >
+          8
+        </div>
+        <div
+          class="
+             
+            bg-gray-300
+            border-2
+            rounded
+            px-3
+            py-2
+            text-center
+            font-bold
+            text-3xl
+          "
+          onclick="getValue(this)"
+        >
+          9
+        </div>
+        <div
+          class="
+             
+            bg-gray-300
+            border-2
+            rounded
+            px-3
+            py-2
+            text-center
+            font-bold
+            text-3xl
+          "
+          onclick="getValue(this)"
+        >
+          *
+        </div>
+        <div
+          class="
+             
+            bg-gray-300
+            border-2
+            rounded
+            px-3
+            py-2
+            text-center
+            font-bold
+            text-3xl
+          "
+          onclick="getValue(this)"
+        >
+          4
+        </div>
+        <div
+          class="
+             
+            bg-gray-300
+            border-2
+            rounded
+            px-3
+            py-2
+            text-center
+            font-bold
+            text-3xl
+          "
+          onclick="getValue(this)"
+        >
+          5
+        </div>
+        <div
+          class="
+             
+            bg-gray-300
+            border-2
+            rounded
+            px-3
+            py-2
+            text-center
+            font-bold
+            text-3xl
+          "
+          onclick="getValue(this)"
+        >
+          6
+        </div>
+        <div
+          class="
+             
+            bg-gray-300
+            border-2
+            rounded
+            px-3
+            py-2
+            text-center
+            font-bold
+            text-3xl
+          "
+          onclick="getValue(this)"
+        >
+          -
+        </div>
+        <div
+        id="one"
+          class="
+             
+            bg-gray-300
+            border-2
+            rounded
+            px-3
+            py-2
+            text-center
+            font-bold
+            text-3xl
+          "
+          onclick="getValue(this)"
+        >
+          1
+        </div>
+        <div
+          class="
+             
+            bg-gray-300
+            border-2
+            rounded
+            px-3
+            py-2
+            text-center
+            font-bold
+            text-3xl
+          "
+          onclick="getValue(this)"
+        >
+          2
+        </div>
+        <div
+          class="
+             
+            bg-gray-300
+            border-2
+            rounded
+            px-3
+            py-2
+            text-center
+            font-bold
+            text-3xl
+          "
+          onclick="getValue(this)"
+        >
+          3
+        </div>
+        <div
+          class="
+             
+            bg-gray-300
+            border-2
+            rounded
+            px-3
+            py-2
+            text-center
+            font-bold
+            text-3xl
+          "
+          onclick="getValue(this)"
+        >
+          +
+        </div>
+        <div
+          class="
+             
+            bg-gray-300
+            border-2
+            rounded
+            px-3
+            py-2
+            text-center
+            font-bold
+            text-3xl
+            col-span-2
+          "
+          onclick="getValue(this)"
+        >
+          0
+        </div>
+        <div
+          class="
+             
+            bg-gray-300
+            border-2
+            rounded
+            px-3
+            py-2
+            text-center
+            font-bold
+            text-3xl
+          "
+          onclick="getValue(this)"
+        >
+          .
+        </div>
+        <div
+          class="
+             
+            bg-gray-300
+            border-2
+            rounded
+            px-3
+            py-2
+            text-center
+            font-bold
+            text-3xl
+          "
+          onclick="calculation()"
+        >
+          =
+        
+      </div>
+    </div>
+
+    <!-- js link  -->
+    <script src="./js/calculator.js"></script>
+  </body>
+</html>
